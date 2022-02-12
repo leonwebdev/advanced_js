@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/orbit-1.3.0.css" />
+        <link rel="stylesheet" href="css/globals.css" />
+        <link rel="stylesheet" href="css/grid.css" />
+        <link rel="stylesheet" href="css/mobile.css" />
+        <link rel="stylesheet" href="css/typography.css" />
+        <link rel="stylesheet" href="css/demo-style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.orbit-1.3.0.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#responsive").orbit({
+                    bullets: true,
+                    fluid: true,
+                    animationSpeed: 300,
+                    captionAnimation: "fade",
+                });
+            });
+        </script>
+        <title>Advanced-JS-Assignments-1</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="ten columns">
+                    <h1>Funny Moments in Winter Olympics</h1>
+                    <span class="orbit-caption" id="Caption1"
+                        >Figure skaters are known for their graceful, delicate
+                        performances</span
+                    >
+                    <span class="orbit-caption" id="Caption2"
+                        >Athletes fall during the men’s 1,000 metres short track
+                        speed skating
+                    </span>
+                    <span class="orbit-caption" id="Caption3"
+                        >Olymic officials admit concern over North Korean
+                        bobsleigh</span
+                    >
+                    <span class="orbit-caption" id="Caption4"
+                        >A shirtless man clad in a tutu dances on the rink</span
+                    >
+                    <div id="responsive">
+                        <img
+                            src="images/slideshowLayer1.jpg"
+                            data-caption="#Caption1"
+                        />
+                        <img
+                            src="images/slideshowLayer2.jpg"
+                            data-caption="#Caption2"
+                        />
+                        <img
+                            src="images/slideshowLayer3.jpg"
+                            data-caption="#Caption3"
+                        />
+                        <img
+                            src="images/slideshowLayer4.jpg"
+                            data-caption="#Caption4"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
