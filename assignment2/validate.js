@@ -96,3 +96,24 @@ function validateFirstName() {
         error_flag = false;
     }
 }
+
+/**
+ * [validatePhone validate phone number]
+ *
+ * @return  {[void]}  [return void]
+ */
+ function validatePhone() {
+    let v_phone = document.getElementById('registration').phone.value;
+    console.log(v_phone);
+    let pttn = /^\[?[0-9]{3}[\]\.\-]?[0-9]{3}[\.\-]?[0-9]{4}$/g;
+    console.log(pttn);
+    let result = v_phone.match(pttn);
+    console.log(result);
+    if (!result) {
+        error_flag = true;
+        error_boxes.error_message[4] = "Please input valid phone number";
+        console.log(error_flag);
+    } else {
+        error_flag = false;
+    }
+}
