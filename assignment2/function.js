@@ -187,43 +187,6 @@ function validateForm(e, el) {
 
 
 
-/**
- * [validateWebUrl validate web url]
- *
- * @return  {[void]}  [return void]
- */
-function validateWebUrl() {
-    let v_web_url = document.getElementById('registration').web_url.value;
-    console.log(v_web_url);
-    // get the length of the value
-    let factor_length = v_web_url.length;
-    console.log(factor_length);
-    // get the first 6,7,8 characters of the string
-    let factor_first_six = v_web_url.substring(0, 6);
-    console.log(factor_first_six);
-    let factor_first_seven = v_web_url.substring(0, 7);
-    console.log(factor_first_seven);
-    let factor_first_eight = v_web_url.substring(0, 8);
-    console.log(factor_first_eight);
-
-    if (v_web_url == '') {
-        error_flag = true;
-        error_boxes.error_message[6] = 'Please input website url';
-        console.log('empty url');
-    } else if (factor_length < 10) {
-        error_flag = true;
-        error_boxes.error_message[6] = 'Please input valid web url more than 10 characters';
-        console.log('less than 10 char');
-    } else if (factor_first_six != 'ftp://' && factor_first_seven != 'http://' && factor_first_seven != 'ftps://' && factor_first_eight != 'https://') {
-        error_flag = true;
-        error_boxes.error_message[6] = `Please input valid web url with accepted protocols: 'ftp://' 'http://' 'ftps://' 'https://'`;
-        console.log('not valid protocal');
-    } else if (factor_first_six == 'ftp://' || factor_first_seven == 'http://' || factor_first_seven == 'ftps://' || factor_first_eight == 'https://') {
-        error_flag = false;
-        error_boxes.error_message[6] = '';
-        console.log('good url');
-    }
-}
 
 /**
  * [getCookie get information from cookie, may return two different value]

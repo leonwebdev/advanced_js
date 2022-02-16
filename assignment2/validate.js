@@ -17,7 +17,7 @@ function validateFirstName() {
         error_flag = true;
         error_boxes.error_message[0] = "Please input first name";
         console.log(error_flag);
-        if (check_negation == ' ') {
+        if (check_negation == " ") {
             error_flag = true;
             error_boxes.error_message[0] = "First name could not include space";
             console.log(error_flag);
@@ -32,8 +32,8 @@ function validateFirstName() {
  *
  * @return  {[void]}  [return void]
  */
- function validateLastName() {
-    let v_last_name = document.getElementById('registration').last_name.value;
+function validateLastName() {
+    let v_last_name = document.getElementById("registration").last_name.value;
     let pttn = /^[a-zA-Z\-]+$/g;
     let negation = /\s/g;
     console.log(pttn);
@@ -46,7 +46,7 @@ function validateFirstName() {
         error_flag = true;
         error_boxes.error_message[1] = "Please input last name";
         console.log(error_flag);
-        if (check_negation == ' ') {
+        if (check_negation == " ") {
             error_flag = true;
             error_boxes.error_message[1] = "Last name could not include space";
             console.log(error_flag);
@@ -61,16 +61,17 @@ function validateFirstName() {
  *
  * @return  {[void]}  [return void]
  */
- function validateEmail() {
-    let v_email = document.getElementById('registration').email.value;
-    let factor = v_email.indexOf('@');
-    if (v_email == '') {
+function validateEmail() {
+    let v_email = document.getElementById("registration").email.value;
+    let factor = v_email.indexOf("@");
+    if (v_email == "") {
         error_flag = true;
-        error_boxes.error_message[2] = 'Please input email';
+        error_boxes.error_message[2] = "Please input email";
         console.log(error_flag);
     } else if (factor == -1) {
         error_flag = true;
-        error_boxes.error_message[2] = 'Please input valid email with \'@\' symbol';
+        error_boxes.error_message[2] =
+            "Please input valid email with '@' symbol";
         console.log(error_flag);
     } else {
         error_flag = false;
@@ -82,8 +83,9 @@ function validateFirstName() {
  *
  * @return  {[void]}  [return void]
  */
- function validatePostalCode() {
-    let v_postal_code = document.getElementById('registration').postal_code.value;
+function validatePostalCode() {
+    let v_postal_code =
+        document.getElementById("registration").postal_code.value;
     let pttn = /^[a-zA-Z][0-9][a-zA-Z]\_[0-9][a-zA-Z][0-9]$/g;
     console.log(pttn);
     let result = v_postal_code.match(pttn);
@@ -102,8 +104,8 @@ function validateFirstName() {
  *
  * @return  {[void]}  [return void]
  */
- function validatePhone() {
-    let v_phone = document.getElementById('registration').phone.value;
+function validatePhone() {
+    let v_phone = document.getElementById("registration").phone.value;
     console.log(v_phone);
     let pttn = /^\[?[0-9]{3}[\]\.\-]?[0-9]{3}[\.\-]?[0-9]{4}$/g;
     console.log(pttn);
@@ -123,8 +125,8 @@ function validateFirstName() {
  *
  * @return  {[void]}  [return void]
  */
- function validateAge() {
-    let v_age = document.getElementById('registration').age.value;
+function validateAge() {
+    let v_age = document.getElementById("registration").age.value;
     console.log(v_age);
     let pttn = /^[1]?[0-9]{2}?$/g;
     console.log(pttn);
@@ -133,6 +135,27 @@ function validateFirstName() {
     if (!result) {
         error_flag = true;
         error_boxes.error_message[5] = "Please input valid age";
+        console.log(error_flag);
+    } else {
+        error_flag = false;
+    }
+}
+
+/**
+ * [validateWebUrl validate web url]
+ *
+ * @return  {[void]}  [return void]
+ */
+function validateWebUrl() {
+    let v_web_url = document.getElementById("registration").web_url.value;
+    console.log(v_web_url);
+    let pttn = /^(http\:\/\/|https\:\/\/)/g;
+    console.log(pttn);
+    let result = v_web_url.match(pttn);
+    console.log(result);
+    if (!result) {
+        error_flag = true;
+        error_boxes.error_message[6] = "Please input valid web URL";
         console.log(error_flag);
     } else {
         error_flag = false;
