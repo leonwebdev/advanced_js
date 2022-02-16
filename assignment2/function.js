@@ -177,21 +177,6 @@ function validateForm(e, el) {
 }
 
 
-/**
- * [validateLastName validate last name]
- *
- * @return  {[void]}  [return void]
- */
-function validateLastName() {
-    let v_last_name = document.getElementById('registration').last_name.value;
-    if (v_last_name == '') {
-        error_flag = true;
-        error_boxes.error_message[1] = 'Please input last name';
-        console.log(error_flag);
-    } else {
-        error_flag = false;
-    }
-}
 
 
 /**
