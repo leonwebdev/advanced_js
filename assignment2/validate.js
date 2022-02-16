@@ -63,19 +63,73 @@ function validateLastName() {
  */
 function validateEmail() {
     let v_email = document.getElementById("registration").email.value;
-    let factor = v_email.indexOf("@");
-    if (v_email == "") {
-        error_flag = true;
+    let is_at_symbol = v_email.match(/@/);
+    console.log(is_at_symbol);
+
+    // check if there is the at symbol
+    if (!is_at_symbol) {
         error_boxes.error_message[2] = "Please input email";
-        console.log(error_flag);
-    } else if (factor == -1) {
-        error_flag = true;
-        error_boxes.error_message[2] =
-            "Please input valid email with '@' symbol";
-        console.log(error_flag);
     } else {
-        error_flag = false;
+        let pttn_email_local_part = /^[a-zA-Z0-9\!\#\$\%\&\'\*\+\-\/\=\?\^\_\`\{\|\}\~\.]*\@/g;
+        let pttn_email_domain_part = /[\@][a-zA-Z0-9\-\.]*$/g;
+        // let email_local_part = v_email.match(/^[a-zA-Z0-9\!\#\$\%\&\'\*\+\-\/\=\?\^\_\`\{\|\}\~\.]*\@/g).join().slice(0, -1);
+        // let email_domain_part = v_email.match(/[\@][a-zA-Z0-9\-\.]*$/g).join().substring(1);
+        // console.log(email_local_part);
+        // console.log(email_domain_part);
+
+        // split email by at symbol
+        let email_part = v_email.split('@');
+        console.log(email_part);
+
+        let email_local_part = email_part[0];
+        let email_domain_part = email_part[1];
+        console.log(email_local_part);
+        console.log(email_domain_part);
+
+        // split local part by a period
+        email_local_part = email_local_part.split('.');
+        console.log(email_local_part);
+
+        // loop to check each part
+        for (let i = 0; i < email_local_part.length; i++) {
+
+            let factor = email_local_part[i].match(/[a-zA-Z0-9\!\#\$\%\&\'\*\+\-\/\=\?\^\_\`\{\|\}\~\.]*/);
+            console.log(factor);
+            if (!factor) {
+                error_boxes.error_message[2] = "Please input valid email";
+            }
+        }
+
+        // split domain part by a period
+        email_domain_part = email_domain_part.split('.');
+        console.log(email_domain_part);
+
+        // loop to check each part
+        for (let i = 0; i < email_domain_part.length; i++) {
+
+            let factor = email_domain_part[i].match(/[a-zA-Z0-9\-\.]*/);
+            console.log(factor);
+            if (!factor) {
+                error_boxes.error_message[2] = "Please input valid email";
+            }
+        }
     }
+
+
+
+
+
+
+
+
+    // } else if (1) {
+    //     error_flag = true;
+    //     error_boxes.error_message[2] =
+    //         "Please input valid email with '@' symbol";
+    //     console.log(error_flag);
+    // } else {
+    //     error_flag = false;
+    // }
 }
 
 /**
@@ -84,8 +138,7 @@ function validateEmail() {
  * @return  {[void]}  [return void]
  */
 function validatePostalCode() {
-    let v_postal_code =
-        document.getElementById("registration").postal_code.value;
+    let v_postal_code = document.getElementById("registration").postal_code.value;
     let pttn = /^[a-zA-Z][0-9][a-zA-Z]\_[0-9][a-zA-Z][0-9]$/g;
     console.log(pttn);
     let result = v_postal_code.match(pttn);
