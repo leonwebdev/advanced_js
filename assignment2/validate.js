@@ -70,8 +70,8 @@ function validateEmail() {
     if (!is_at_symbol) {
         error_boxes.error_message[2] = "Please input email";
     } else {
-        let pttn_email_local_part = /^[a-zA-Z0-9\!\#\$\%\&\'\*\+\-\/\=\?\^\_\`\{\|\}\~\.]*\@/g;
-        let pttn_email_domain_part = /[\@][a-zA-Z0-9\-\.]*$/g;
+        // let pttn_email_local_part = /^[a-zA-Z0-9\!\#\$\%\&\'\*\+\-\/\=\?\^\_\`\{\|\}\~\.]*\@/g;
+        // let pttn_email_domain_part = /[\@][a-zA-Z0-9\-\.]*$/g;
         // let email_local_part = v_email.match(/^[a-zA-Z0-9\!\#\$\%\&\'\*\+\-\/\=\?\^\_\`\{\|\}\~\.]*\@/g).join().slice(0, -1);
         // let email_domain_part = v_email.match(/[\@][a-zA-Z0-9\-\.]*$/g).join().substring(1);
         // console.log(email_local_part);
@@ -114,13 +114,6 @@ function validateEmail() {
             }
         }
     }
-
-
-
-
-
-
-
 
     // } else if (1) {
     //     error_flag = true;
