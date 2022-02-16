@@ -55,3 +55,25 @@ function validateFirstName() {
         error_flag = false;
     }
 }
+
+/**
+ * [validateEmail validate email]
+ *
+ * @return  {[void]}  [return void]
+ */
+ function validateEmail() {
+    let v_email = document.getElementById('registration').email.value;
+    let factor = v_email.indexOf('@');
+    if (v_email == '') {
+        error_flag = true;
+        error_boxes.error_message[2] = 'Please input email';
+        console.log(error_flag);
+    } else if (factor == -1) {
+        error_flag = true;
+        error_boxes.error_message[2] = 'Please input valid email with \'@\' symbol';
+        console.log(error_flag);
+    } else {
+        error_flag = false;
+    }
+}
+
