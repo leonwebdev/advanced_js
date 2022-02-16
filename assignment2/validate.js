@@ -117,3 +117,24 @@ function validateFirstName() {
         error_flag = false;
     }
 }
+
+/**
+ * [validateAge validate age]
+ *
+ * @return  {[void]}  [return void]
+ */
+ function validateAge() {
+    let v_age = document.getElementById('registration').age.value;
+    console.log(v_age);
+    let pttn = /^[1]?[0-9]{2}?$/g;
+    console.log(pttn);
+    let result = v_age.match(pttn);
+    console.log(result);
+    if (!result) {
+        error_flag = true;
+        error_boxes.error_message[5] = "Please input valid age";
+        console.log(error_flag);
+    } else {
+        error_flag = false;
+    }
+}

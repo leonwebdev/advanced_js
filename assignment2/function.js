@@ -185,28 +185,7 @@ function validateForm(e, el) {
 
 
 
-/**
- * [validateAge validate age]
- *
- * @return  {[void]}  [return void]
- */
-function validateAge() {
-    let v_age = document.getElementById('registration').age.value;
-    console.log(v_age);
-    let factor = isNaN(parseInt(v_age));
-    console.log(factor);
-    if (v_age == '') {
-        error_flag = true;
-        error_boxes.error_message[5] = 'Please input age';
-        console.log(error_flag);
-    } else if (factor == true) {
-        error_flag = true;
-        error_boxes.error_message[5] = 'Please input valid age with a number';
-        console.log(error_flag);
-    } else {
-        error_flag = false;
-    }
-}
+
 
 /**
  * [validateWebUrl validate web url]
