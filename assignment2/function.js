@@ -108,7 +108,7 @@ function validateForm(e, el) {
         error_boxes.error_box[i] = error_box_query[i];
         error_boxes.error_message[i] = '';
         error_boxes.error_box[i].innerHTML = error_boxes.error_message[i];
-        console.log(error_boxes);
+        // console.log(error_boxes);
     }
 
     // validate all fields
@@ -124,14 +124,14 @@ function validateForm(e, el) {
     for (let i = 0; i < error_box_query.length; i++) {
 
         error_boxes.error_box[i].innerHTML = error_boxes.error_message[i];
-        console.log(error_boxes);
+        // console.log(error_boxes);
     }
     // check if there is any error currently
     // if there is an error, stop the function
     var factor_any_error = '';
     for (let i = 0; i < error_boxes.error_message.length; i++) {
         factor_any_error += error_boxes.error_message[i];
-        console.log(factor_any_error);
+        // console.log(factor_any_error);
     }
 
     if (factor_any_error != '') {
@@ -176,21 +176,6 @@ function validateForm(e, el) {
     window.location.href = "output.html";
 }
 
-/**
- * [validateFirstName validate first name]
- *
- * @return  {[void]}  [return void]
- */
-function validateFirstName() {
-    let v_first_name = document.getElementById('registration').first_name.value;
-    if (v_first_name == '') {
-        error_flag = true;
-        error_boxes.error_message[0] = 'Please input first name';
-        console.log(error_flag);
-    } else {
-        error_flag = false;
-    }
-}
 
 /**
  * [validateLastName validate last name]
