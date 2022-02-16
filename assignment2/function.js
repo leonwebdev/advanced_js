@@ -181,26 +181,7 @@ function validateForm(e, el) {
 
 
 
-/**
- * [validatePostalCode validate postal code]
- *
- * @return  {[void]}  [return void]
- */
-function validatePostalCode() {
-    let v_postal_code = document.getElementById('registration').postal_code.value;
-    let factor = v_postal_code.length;
-    if (v_postal_code == '') {
-        error_flag = true;
-        error_boxes.error_message[3] = 'Please input postal code';
-        console.log(error_flag);
-    } else if (factor != 6) {
-        error_flag = true;
-        error_boxes.error_message[3] = 'Please input valid 6-characters postal code';
-        console.log(error_flag);
-    } else {
-        error_flag = false;
-    }
-}
+
 
 /**
  * [validatePhone validate phone number]

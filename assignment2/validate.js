@@ -77,3 +77,22 @@ function validateFirstName() {
     }
 }
 
+/**
+ * [validatePostalCode validate postal code]
+ *
+ * @return  {[void]}  [return void]
+ */
+ function validatePostalCode() {
+    let v_postal_code = document.getElementById('registration').postal_code.value;
+    let pttn = /^[a-zA-Z][0-9][a-zA-Z]\_[0-9][a-zA-Z][0-9]$/g;
+    console.log(pttn);
+    let result = v_postal_code.match(pttn);
+    console.log(result);
+    if (!result) {
+        error_flag = true;
+        error_boxes.error_message[3] = "Please input valid postal code";
+        console.log(error_flag);
+    } else {
+        error_flag = false;
+    }
+}
