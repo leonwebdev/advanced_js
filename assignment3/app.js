@@ -18,3 +18,5 @@ console.log(get_name);
 
 document.querySelector("h1").innerHTML =
   "Hi, " + get_name + ". Today is " + get_day + ". Let's get dressed.";
+
+var audio = new Audio("Fluffing-a-Duck.mp3");

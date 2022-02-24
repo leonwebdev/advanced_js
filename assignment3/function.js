@@ -12,6 +12,7 @@ function dropIt(event) {
   console.log(data);
   document.getElementById(data).style.top = "330px";
   document.getElementById(data).style.left = "608px";
+  audio.play();
   console.log("drop success");
   setInterval(drawHeart, 500);
 }
