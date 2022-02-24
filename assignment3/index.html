@@ -11,11 +11,21 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Advanced JS</title>
+    <script>
+      let user_name = prompt("Input your name:");
+      let color = prompt("What is your favorite color:");
+      let day = prompt("What day is it today:");
+
+      localStorage.setItem("user_name", user_name);
+      localStorage.setItem("color", color);
+      localStorage.setItem("the_day", day);
+    </script>
   </head>
 
   <body>
     <div id="body_wrap">
+      <h1></h1>
       <img
         class="img_div"
         id="doll"

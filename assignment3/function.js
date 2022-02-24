@@ -10,7 +10,7 @@ function dropIt(event) {
   var data = event.dataTransfer.getData("text");
   console.log(event.target);
   console.log(data);
-  document.getElementById(data).style.top = "230px";
+  document.getElementById(data).style.top = "330px";
   document.getElementById(data).style.left = "608px";
   console.log("drop success");
   setInterval(drawHeart, 500);
