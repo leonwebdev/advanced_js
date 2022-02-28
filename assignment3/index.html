@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Advanced JS</title>
+    <script>
+      let user_name = prompt("Input your name:");
+      let color = prompt("What is your favorite color:");
+      let day = prompt("What day is it today:");
+
+      localStorage.setItem("user_name", user_name);
+      localStorage.setItem("color", color);
+      localStorage.setItem("the_day", day);
+    </script>
+  </head>
+
+  <body>
+    <div id="body_wrap">
+      <h1></h1>
+      <img
+        class="img_div"
+        id="doll"
+        ondrop="dropIt(event)"
+        ondragover="allowDrop(event)"
+        src="images/doll.png"
+        alt="doll"
+      />
+
+      <img
+        class="img_div"
+        id="skirt"
+        draggable="true"
+        ondragstart="dragIt(event)"
+        src="images/skirt.png"
+        alt="skirt"
+      />
+
+      <canvas> This page needs to download latest Chrome Browser. </canvas>
+    </div>
+  </body>
+  <script src="app.js"></script>
+  <script src="function.js"></script>
+</html>
